@@ -363,7 +363,7 @@ keytool -importkeystore -srckeystore keystore.keystore -destkeystore keystore.ke
 <%_ if (options.TUIKit) { _%>
 ## TIM
 本项目已按下列文档集成 TIM:
-https://github.com/TencentCloud/TIMSDK/tree/master/uni-app/TUIKit-vue2-js
+https://github.com/TencentCloud/TIMSDK/tree/6dfe341/uni-app/TUIKit-vue2-js
 
 其中, 为适配项目, 新增下列文件
 
@@ -411,7 +411,11 @@ https://github.com/TencentCloud/TIMSDK/tree/master/uni-app/TUIKit-vue2-js
 
 > pages/TUI-Index --> tim-pages/index
 
-> pages/TUI-Login --> tim-pages/login
+> pages/TUI-Login --> pages/tim-login
+
+> pages/TUI-Login/login.vue --> pages/tim-login/login.vue
+
+> pages/TUI-Login/login.css --> pages/tim-login/index.css
 
 > pages/TUI-User-Center --> tim-pages/ucenter
 
