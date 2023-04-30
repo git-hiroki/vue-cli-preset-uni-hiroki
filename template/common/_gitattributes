@@ -1,0 +1,12 @@
+*.js eol=lf
+*.vue eol=lf
+*.json eol=lf
+*.yml eol=lf
+*.md eol=lf
+*.html eol=lf
+*.css eol=lf
+*.scss eol=lf
+*.less eol=lf
+*.sh eol=lf
+*.bat eol=lf
+*.cmd eol=lf

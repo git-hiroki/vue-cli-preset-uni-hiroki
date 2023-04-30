@@ -1,0 +1,31 @@
+/**
+ * 🎨OEM 主题样式配置文件
+ * @author 🌳·𝒉𝒊𝒓𝒐𝒌𝒊 <hiroki@email.com>
+ * @version 2.0.0
+ * 声明:
+ * 本文件中所有的变量使用序数词定声明规范
+ * 序数词:
+ * primary, secondary, tertiary, quaternary, quinary, senary, setenary, octonary, nonary, denary
+ * ----- ----- ----- ----- -----
+ * 形容词:
+ * 背景色: -bg, 前景色: -color, 边框色: -border, 投影色: -shadow
+ * 透明度: -opacity, 间距: -space, 尺寸: -size, 圆角: -radius
+ * 边框色: -line
+ * 字体色: -font, 字号: -font-size, 字重: -font-weight
+ * ----- ----- ----- ----- -----
+ * 命名规范:
+ * [序数词] + [形容词], 如: primary-bg, secondary-color, tertiary-border, quaternary-shadow 等
+*/
+
+// 🚨 来访者注意
+// 此处有坑, 在小程序中, --status-bar-height 的值将始终返回为 25px,
+// 因此应始终使用 uni.$statusbarHeight 获取
+
+@statusbar-height: ~"var(--status-bar-height)";
+
+@safe-area-inset-top: ~"var(--safe-area-inset-top)";
+@safe-area-inset-right: ~"var(--safe-area-inset-right)";
+@safe-area-inset-bottom: ~"var(--safe-area-inset-bottom)";
+@safe-area-inset-left: ~"var(--safe-area-inset-left)";
+
+@primary-color: <%= options.primaryColor %>;

@@ -1,0 +1,4 @@
+node_modules
+libs
+template
+!.commitlintrc.js

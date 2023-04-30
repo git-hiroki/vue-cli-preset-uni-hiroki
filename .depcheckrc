@@ -1,0 +1,23 @@
+"ignores": [
+  "eslint",
+  "stylelint*",
+  "husky",
+  "lint-staged",
+  "@vue/*",
+  "vue-*",
+  "@dcloudio/*",
+  "babel-*",
+  "@babel/*",
+  "@commitlint/*",
+  "commitlint*",
+  "mini-types",
+  "miniprogram-api-typings",
+  "conventional-changelog-cli",
+  "esdoc-*",
+  "less*",
+  "sass*",
+  "core-js",
+  "flyio",
+  "regenerator-runtime"
+]
+"skip-missing": true

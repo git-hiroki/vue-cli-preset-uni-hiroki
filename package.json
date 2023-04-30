@@ -1,0 +1,42 @@
+{
+  "name": "vue-cli-preset-uni-hiroki",
+  "version": "1.0.0",
+  "main": "generator/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./*.js",
+    "lint:fix": "npm run lint -- --fix",
+    "tinify": "node ./tinify.js",
+    "esdoc": "esdoc -c ./docs/.esdoc.json",
+    "depcheck": "depcheck .",
+    "version": "conventional-changelog -p custom-config -i CHANGELOG.md -s -n ./changelogrc.js && git add CHANGELOG.md && git commit --no-verify -m \"docs: 更改CHANGELOG.md",
+    "release": "npm version minor -m \"chore: 线上版本更新\"",
+    "major": "npm version major -m \"chore: 线上版本更新\"",
+    "prepare": "npx husky install",
+    "lint-staged": "lint-staged -q -v"
+  },
+  "author": "Hiroki",
+  "license": "The Unlicense",
+  "devDependencies": {
+    "download-git-repo": "^1.1.0",
+    "ora": "^3.0.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.1.0",
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "commitlint": "^17.3.0",
+    "vue-cli-plugin-commitlint": "^1.0.12",
+    "conventional-changelog-cli": "^2.2.2",
+    "conventional-changelog-custom-config": "^0.3.1",
+    "esdoc": "^1.1.0",
+    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
+    "esdoc-standard-plugin": "^1.0.0",
+    "esdoc-vue-plugin": "^1.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^7.19.1",
+    "stylelint": "^14.16.0",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-order": "^5.0.0"
+  }
+}

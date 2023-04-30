@@ -1,0 +1,15 @@
+{
+<%_ if (options.eslint) { _%>
+  "*.{js, vue, json}":
+  [
+    "npm run lint:fix"
+  ],
+<%_ } _%>
+
+<%_ if (options.tinify) { _%>
+  "*.{jpg, jpeg, png, bmp, tif, tiff, webp, svg, gif}":
+  [
+    "npm run tinify"
+  ]
+<%_ } _%>
+}

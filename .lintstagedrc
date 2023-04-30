@@ -1,0 +1,6 @@
+{
+  "*.{js, vue, json}":
+  [
+    "npm run lint:fix"
+  ]
+}

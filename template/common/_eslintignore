@@ -1,0 +1,35 @@
+node_modules
+libs
+
+src/libs
+src/static
+src/components/uni*
+src/components/validation
+src/components/datetime-picker
+src/components/data-picker
+src/components/data-picker-view
+src/components/popup
+src/components/tooltips
+src/components/echarts
+src/mixins/global.js
+!.commitlintrc.js
+
+<%_ if (options.TUIKit) { _%>
+# TIM 相关
+src/tim*
+src/pages/message
+src/polyfill/*
+src/components/base
+src/components/tui-*
+src/tim-pages/*
+src/utils/api.js
+src/utils/console.js
+src/utils/logger.js
+src/utils/token.js
+src/utils/common-utils.js
+src/static/js/tim-wx.js
+<%_ } _%>
+
+# ucharts 相关
+src/components/qiun-*
+src/components/u-charts/*

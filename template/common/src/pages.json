@@ -1,0 +1,139 @@
+{
+  "pages": 
+  [
+    {
+      "path": "pages/login/index",
+      "style": {
+        "disableScroll": true,
+        "navigationStyle": "custom"
+      }
+    }
+<%_ if (options.TUIKit) { _%>
+    ,
+    {
+      "path": "pages/tim-login/index",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    }
+<%_ } _%>
+  ],
+  <%_ if (options.TUIKit) { _%>
+  "subPackages": [
+    {
+      "root": "tim-pages",
+      "pages": [
+        {
+          "path": "index/index",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "conversation/conversation",
+          "style": {
+            "navigationBarTitleText": "会话列表",
+            "navigationBarBackgroundColor": "#006EFF",
+            "backgroundColor": "#FFFFFF",
+            "navigationBarTextStyle": "white"
+          }
+        },
+        {
+          "path": "chat/chat",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "create-conversation/create",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "ucenter/mine/mine",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "ucenter/about/about",
+          "style": {}
+        },
+        {
+          "path": "ucenter/personal/personal",
+          "style": {}
+        },
+        {
+          "path": "ucenter/cancel/cancel",
+          "style": {}
+        },
+        {
+          "path": "ucenter/webview/webview",
+          "style": {}
+        },
+    
+        {
+          "path": "create-group/create",
+          "style": {}
+        },
+        {
+          "path": "join-group/join",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        }
+      ]
+    }
+  ],
+<%_ } _%>
+/*
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "home/index"
+      },
+      {
+        "text": "我的",
+        "pagePath": "mine/index"
+      }
+    ]
+  },
+*/
+  "globalStyle": {
+    "backgroundTextStyle": "light",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#FFFFFF",
+    "backgroundColorTop": "#FFFFFF",
+    "backgroundColorBottom": "#FFFFFF"
+  },
+  <%_ if (options.TUIKit) { _%>
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "<%= options.primaryColor %>",
+    "backgroundColor": "#FFFFFF",
+    "list": 
+      [
+        {
+          "pagePath": "pages/login/index",
+          "text": "登录"
+        },
+        {
+          "pagePath": "pages/tim-login/index",
+          "text": "IM"
+        }
+        /*
+          {
+            "pagePath": "pages/login/index",
+            "text": "登录",
+            "iconPath": "static/images/tabbar/icon-home.png",
+            "selectedIconPath": "static/images/tabbar/icon-home-active.png"
+          },
+        */
+      ]
+  },
+  <%_ } _%>
+  "sitemapLocation": "sitemap.json"
+}

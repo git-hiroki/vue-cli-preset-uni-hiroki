@@ -1,0 +1,23 @@
+{
+  "emeraldwalk.runonsave": {
+    "commands": [
+        {
+            "match": ".*",
+            "isAsync": true,
+            "cmd": "npm run lint:fix"
+        },
+        {
+            "match": "\\.js$",
+            "cmd": "npm run lint:fix"
+        },
+        {
+            "match": "\\.vue$",
+            "cmd": "npm run lint:fix"
+        },
+        {
+          "match": "\\.json$",
+          "cmd": "npm run lint:fix"
+        }
+    ]
+}
+}
