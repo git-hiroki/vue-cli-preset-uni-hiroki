@@ -40,6 +40,12 @@ module.exports = [
   },
   {
     type: "confirm",
+    name: "esdoc",
+    when: answers => answers.lint,
+    message: "使用 ESDoc 自动化生成前端文档"
+  },
+  {
+    type: "confirm",
     name: "eslint",
     when: answers => answers.lint,
     message: "使用 ESLint 进行编码规范检查和自动修复"
