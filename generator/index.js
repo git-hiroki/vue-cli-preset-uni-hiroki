@@ -152,12 +152,12 @@ module.exports = (api, options, rootOptions) => {
       );
   });
 
-  api.render("./template/common");
+  api.render("../template/common");
 
   if(options.TUIKit){
-    api.render("./template/tuikit");
+    api.render("../template/tuikit");
   }
   else {
-    api.render("./template/default");
+    api.render("../template/default");
   }
 };
