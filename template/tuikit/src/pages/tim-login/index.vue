@@ -175,7 +175,7 @@ export default {
         url: `/tim-pages/ucenter/webview/webview?url=${url}&nav=User-Agreement`
       });
     },
-
+    // eslint-disable-next-line max-lines-per-function
     async login(){
       const userID = this.userID,
         { userSig } = await genTestUserSig(userID),
@@ -219,6 +219,7 @@ export default {
             userSig
           },
           res => {
+            // eslint-disable-next-line no-console
             console.log(JSON.stringify(res.msg));
             uni.showToast({
               title: "login",
