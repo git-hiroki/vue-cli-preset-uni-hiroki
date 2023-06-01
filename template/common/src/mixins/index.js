@@ -9,6 +9,9 @@ import LIST_MIXINS from "@/mixins/list";
 <%_ if (options.TUIKit) { _%>
 import TIM_MIXINS from "@/mixins/tim";
 <%_ } _%>
+<%_ if (options.aMap) { _%>
+import LOCATION_MIXINS from "@/mixins/geo-location";
+<%_ } _%>
 export default {
   computed: {
     statusBarHeight(){
@@ -51,6 +54,9 @@ export default {
     ... LIST_MIXINS.methods,
 <%_ if (options.TUIKit) { _%>
     ... TIM_MIXINS.methods,
+<%_ } _%>
+<%_ if (options.aMap) { _%>
+    ... LOCATION_MIXINS.methods,
 <%_ } _%>
     query(){
       const { query } = getApp().globalData,

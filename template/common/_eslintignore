@@ -1,6 +1,7 @@
 node_modules
 libs
 
+src/manifest.json
 src/libs
 src/static
 src/components/uni*
@@ -33,3 +34,6 @@ src/static/js/tim-wx.js
 # ucharts 相关
 src/components/qiun-*
 src/components/u-charts/*
+
+# aMap 相关
+src/utils/geo-location.js

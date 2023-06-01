@@ -11,6 +11,8 @@
 - npm v8.3.1
 - wx-dev-tools 1.06.2210310 win32-x64
 - wx-base-lib 2.27.1
+- TUIKit IM SDK 7.1.3925 (2023年3月15日 17:10:07)
+- amap-webservice-georegeo (2023年01月30日)
 
 **请认真通读此文档, 不执行该文档中涉及的细节将直接导致提交被驳回的后果**
 
@@ -428,3 +430,4 @@ https://github.com/TencentCloud/TIMSDK/tree/6dfe341/uni-app/TUIKit-vue2-js
 
 # Todo's
 - [x] 1. 架构开发
+- [ ] 2. 测试 iOS App, h5 及微信小程序端高德地图逆地理位置编码的功能表现

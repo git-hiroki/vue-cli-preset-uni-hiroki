@@ -27,6 +27,11 @@ module.exports = {
    * 时间单位：秒
    * 默认时间：7 x 24 x 60 x 60 = 604800 = 7 天
    */
-  expire: 604800
+  expire: 604800,
+  <%_ } _%>
+
+  <%_ if (options.aMap) { _%>
+  // 高德地图 Web服务 API Key
+  aMapKey: "<%= options.aMapKey %>",
   <%_ } _%>
 };

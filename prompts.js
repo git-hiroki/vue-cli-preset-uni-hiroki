@@ -115,6 +115,30 @@ module.exports = [
   },
   {
     type: "confirm",
+    name: "aMap",
+    message: "是否集成高德地图",
+    default: false
+  },
+  {
+    type: "input",
+    name: "aMapKey",
+    when: answers => answers.aMap,
+    message: "请输入高德地图 aMapKey",
+    filter: input => new Promise(
+      (resolve, reject) => {
+        if(32 == String(input.length)){
+          resolve(input);
+        }
+        else {
+          reject(
+            new Error("高德地图 aMapKey 填写不正确, 请检查后重新输入")
+          );
+        }
+      }
+    )
+  },
+  {
+    type: "confirm",
     name: "TUIKit",
     message: "是否集成 TUIKit",
     default: false

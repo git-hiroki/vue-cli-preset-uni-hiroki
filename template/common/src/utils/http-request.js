@@ -51,12 +51,13 @@ const http = {
     });
   },
   downloadFile({ url }){
+    url = /^http[s]{0,}/i.test(url) ? url : `${http.baseUrl()}/${url}`;
     return new Promise((resolve, reject) => {
       uni.downloadFile({
         header: {
           token: http.getToken()
         },
-        url: `${http.baseUrl()}/${url}`,
+        url,
         success: res => {
           const fs = uni.getFileSystemManager(),
 
@@ -90,13 +91,14 @@ const http = {
     });
   },
   saveImageToPhotosAlbum({ url }){
+    url = /^http[s]{0,}/i.test(url) ? url : `${http.baseUrl()}/${url}`;
     http.showLoading("图片保存中…");
     return new Promise((resolve, reject) => {
       uni.downloadFile({
         header: {
           token: http.getToken()
         },
-        url: `${http.baseUrl()}/${url}`,
+        url,
         success: res => {
           const contentType = res.header?.["Content-Type"] || res.header?.["content-type"];
           if(/^image/.test(contentType)){
@@ -124,12 +126,13 @@ const http = {
     });
   },
   writeFile({ url }){
+    url = /^http[s]{0,}/i.test(url) ? url : `${http.baseUrl()}/${url}`;
     return new Promise((resolve, reject) => {
       uni.request({
         header: {
           token: http.getToken()
         },
-        url: `${http.baseUrl()}/${url}`,
+        url,
         method: "GET",
         responseType: "arraybuffer",
         success: ({ statusCode, header, data }) => {
@@ -182,6 +185,7 @@ const http = {
    */
   // eslint-disable-next-line max-lines-per-function
   upload({ url, name, fileDir, fileType, extension, sourceType, count }){
+    url = /^http[s]{0,}/i.test(url) ? url : `${http.baseUrl()}/${url}`;
     if(!sourceType){
       sourceType = ["camera", "album"];
     }
@@ -197,7 +201,7 @@ const http = {
             title: "正在上传…"
           });
           const tasks = await Promise.all(tempFilePaths.map(filePath => new Promise((resolve, reject) => uni.uploadFile({
-            url: `${http.baseUrl()}/${url}`,
+            url,
             name: name || "file",
             fileType: fileType || "image",
             extension: extension || [],
@@ -232,8 +236,8 @@ const http = {
     });
   },
   // eslint-disable-next-line max-lines-per-function
-  //
   request({ url, params, method = "GET", isDelay, isForm, mute }){
+    url = /^http[s]{0,}/i.test(url) ? url : `${http.baseUrl()}/${url}`;
     // 接口请求
     let loading = false;
     http.delayed && uni.hideLoading();
@@ -254,7 +258,7 @@ const http = {
 
     return new Promise((resolve, reject) => {
       uni.request({
-        url: `${http.baseUrl()}/${url}`,
+        url,
         data: params,
         header: {
           "content-type": isForm ? "application/x-www-form-urlencoded" : "application/json",
@@ -292,10 +296,11 @@ const http = {
    * @returns {Promise} Promise对象
    */
   uploadFile(url, src){
+    url = /^http[s]{0,}/i.test(url) ? url : `${http.baseUrl()}/${url}`;
     http.showLoading();
     return new Promise((resolve, reject) => {
       const uploadTask = uni.uploadFile({
-        url: `${baseUrl}/${url}`,
+        url,
         filePath: src,
         name: "imageFile",
         formData: {},
