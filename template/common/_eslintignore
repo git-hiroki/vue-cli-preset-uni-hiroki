@@ -2,6 +2,7 @@ node_modules
 libs
 
 src/manifest.json
+src/pages.json
 src/libs
 src/static
 src/components/uni*
