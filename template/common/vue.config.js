@@ -38,17 +38,21 @@ module.exports = {
       })
     ]
   },
-  chainWebpack: config => {
-    config.module
-      .rule("images")
-      .use("url-loader")
-      .loader("url-loader")
-      .tap(
-        options => Object.assign(
-          options ?? {},
-          { limit: 1000000000 }
-        )
-      );
-  },
+  // h5平台, 不对 url-loader 作调整, 默认limit:4096, 也不修改 file-loader 输出路径
+  // @dcloudio\uni-cli-shared\lib\url-loader.js:38
+  ... "h5" !== process.env.UNI_PLATFORM ? {
+    chainWebpack: config => {
+      config.module
+        .rule("images")
+        .use("url-loader")
+        .loader("url-loader")
+        .tap(
+          options => Object.assign(
+            options ?? {},
+            { limit: 1000000000 }
+          )
+        );
+    }
+  } : {},
   lintOnSave: true
 };
