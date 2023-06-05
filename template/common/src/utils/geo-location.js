@@ -12,7 +12,7 @@ export const authorize = () => new Promise(
           reject({ code: -1 });
         }
         else {
-          // #ifdef H5 || MP-WEIXIN
+          // #ifdef MP-WEIXIN
           uni.authorize({
             scope: "scope.userLocation",
             success: ({ errMsg }) => {
