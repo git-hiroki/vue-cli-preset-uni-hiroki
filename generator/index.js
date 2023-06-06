@@ -128,7 +128,11 @@ module.exports = (api, options, rootOptions) => {
         "@dcloudio/types": "^3.3.2",
         "miniprogram-api-typings": "*",
         "mini-types": "*",
-        "postcss-comment": "^2.0.0"
+        "less-loader": "^6.0.0",
+        "postcss": "^7.0.39",
+        "postcss-comment": "^2.0.0",
+        "@vue/cli-plugin-babel": "~4.5.15",
+        "@vue/cli-service": "~4.5.15"
       },
       resolutions: {
         "@babel/runtime": "~7.17.9"
