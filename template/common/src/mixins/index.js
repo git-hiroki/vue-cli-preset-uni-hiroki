@@ -20,7 +20,7 @@ export default {
   },
   data(){
     return {
-      result: {},
+      __result: {},
       __query: {},
       ... COMPONENTS_MIXINS.data(),
       ... LIST_MIXINS.data()
@@ -28,6 +28,7 @@ export default {
   },
   onLoad(query){
     const path = this?.$root?.$Router?.currentRoute?.path;
+    this.__result = {};
     this.__query = query;
     this.path = path;
   },
@@ -36,17 +37,17 @@ export default {
     if(manifest?.[path]){
       // 合并默认配置与清单文件中的页面配置
       Object.keys(manifest?.["*"]).forEach(key => {
-        this.result[path] = this.result?.[path] || {};
+        this.__result[path] = this?.__result?.[path] || {};
         const initState = manifest?.["*"]?.[key],
           { recovery } = initState,
-          oldState = this.result?.[path]?.[key];
-        this.$set(this?.result[path], key, {
+          oldState = this.__result?.[path]?.[key];
+        this.$set(this?.__result[path], key, {
           ... oldState && recovery ? oldState : initState,
           ... manifest?.[path]?.[key] || {}
         });
       });
       // 将合并后的配置注入页面
-      store.commit("inject", this.result[path]);
+      store.commit("inject", this.__result[path]);
     }
   },
   methods: {
