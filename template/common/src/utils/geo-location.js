@@ -3,7 +3,7 @@ import { getRegeo } from "@/api/amap";
 export const authorize = () => new Promise(
   (resolve, reject) => {
     uni.getSystemInfo({
-      success({ locationEnabled, locationAuthorized }){
+      async success({ locationEnabled, locationAuthorized }){
         if([locationEnabled, locationAuthorized].includes(false)){
           uni.showToast({
             icon: "none",
@@ -12,6 +12,16 @@ export const authorize = () => new Promise(
           reject({ code: -1 });
         }
         else {
+          // #ifdef H5
+          const { name, state } = await navigator.permissions.query({ name: "geolocation" });
+          if(["PROMPT", "GRANTED"].includes(state.toUpperCase())){
+            resolve({ code: 200 });
+          }
+          else {
+            reject({ code: -1 });
+          }
+          // #endif
+
           // #ifdef MP-WEIXIN
           uni.authorize({
             scope: "scope.userLocation",
@@ -47,6 +57,7 @@ export const getLocation = () => new Promise(
     const { code } = await authorize();
     if(200 == code){
       const { platform } = uni?.$systemInfo;
+      // #ifndef H5
       uni?.getLocation({
         isHighAccuracy: true,
         accuracy: "best",
@@ -63,6 +74,17 @@ export const getLocation = () => new Promise(
           resolve(data?.regeocode?.addressComponent);
         }
       });
+      // #endif
+      // #ifdef H5
+      navigator?.geolocation?.getCurrentPosition(
+        async ({ coords: { longitude, latitude } }) => {
+          const data = await getRegeo({
+            location: `${longitude},${latitude}`
+          });
+          resolve(data?.regeocode?.addressComponent);
+        }
+      );
+      // #endif
     }
   }
 );
