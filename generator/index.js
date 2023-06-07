@@ -76,6 +76,7 @@ module.exports = (api, options, rootOptions) => {
             "moment": "^2.29.4",
             "uni-simple-router": "^2.0.7",
             "uni-read-pages": "^1.0.5",
+            "qs": "^6.11.0",
             ... options?.TUIKit ? {
               "tim-profanity-filter-plugin": "^0.9.0",
               "tim-wx-sdk": "^2.17.0",
