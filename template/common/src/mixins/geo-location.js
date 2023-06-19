@@ -10,7 +10,7 @@ export default {
         uni?.setStorageSync("map_storage", data);
       }
 
-      return data;
+      return location ? location : data;
     }
   }
 };
