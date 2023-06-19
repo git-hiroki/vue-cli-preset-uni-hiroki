@@ -1,5 +1,5 @@
 import store from "@/store";
-import manifest from "@/store/manifest";
+import manifest from "@/configs/manifest";
 
 /**
   🚨警告: 请确保各 Mixins 间命名无冲突

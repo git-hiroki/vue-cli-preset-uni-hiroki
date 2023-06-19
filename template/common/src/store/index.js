@@ -6,7 +6,7 @@ import navbar from "@/store/modules/navbar";
 Vue.use(Vuex);
 
 /**
- * 🚨 新增 store 后, 请务必前往 @/store/manifest 处同步更新配置
+ * 🚨 新增 store 后, 请务必前往 @/configs/manifest 处同步更新配置
 */
 
 const store = new Vuex.Store({
